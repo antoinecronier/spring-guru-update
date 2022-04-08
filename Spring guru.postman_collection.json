@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "dbfcfdd5-03b7-4727-931e-3f1ad0c759a1",
+		"name": "Spring guru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "restserviceforproduct",
+			"item": [
+				{
+					"name": "Post product 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"pname\":\"product1\",\r\n    \"price\":\"10\",\r\n    \"partenaire\":\"partenaire1\",\r\n    \"start\":\"2022-04-08T12:00:00\",\r\n    \"end\":\"2022-04-08T14:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product 1 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"pname\":\"product1\",\r\n    \"price\":\"20\",\r\n    \"partenaire\":\"partenaire1\",\r\n    \"start\":\"2022-04-08T12:00:00\",\r\n    \"end\":\"2022-04-08T14:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product 1 Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"pname\":\"product1\",\r\n    \"price\":\"30\",\r\n    \"partenaire\":\"partenaire1\",\r\n    \"start\":\"2022-04-08T12:00:00\",\r\n    \"end\":\"2022-04-08T14:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"2\",\r\n    \"pname\":\"product2\",\r\n    \"price\":\"12\",\r\n    \"partenaire\":\"partenaire1\",\r\n    \"start\":\"2022-04-08T12:00:00\",\r\n    \"end\":\"2022-04-08T14:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pname\":\"productN\",\r\n    \"price\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post product bulk generate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/bulkproducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"bulkproducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1\",\r\n    \"PName\":\"product1\",\r\n    \"price\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by offset limit 0 100",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partenaires\":[\r\n        \"partenaire1\",\r\n        \"partenaire2\",\r\n        \"partenaire3\"\r\n    ],\r\n    \"start\":\"2022-03-08T12:00:00\",\r\n    \"end\":\"2022-04-28T12:00:00\",\r\n    \"limit\":\"100\",\r\n    \"offset\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by offset limit 0 100 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partenaires\":[\r\n        \"partenaire1\",\r\n        \"partenaire2\",\r\n        \"partenaire3\"\r\n    ],\r\n    \"start\":\"2022-03-08T12:00:01\",\r\n    \"end\":\"2022-04-28T12:00:00\",\r\n    \"limit\":\"100\",\r\n    \"offset\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by offset limit 10 100 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partenaires\":[\r\n        \"partenaire1\",\r\n        \"partenaire2\",\r\n        \"partenaire3\"\r\n    ],\r\n    \"start\":\"2022-03-08T12:00:00\",\r\n    \"end\":\"2022-04-28T12:00:00\",\r\n    \"limit\":\"100\",\r\n    \"offset\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by offset limit 20 100",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partenaires\":[\r\n        \"partenaire1\",\r\n        \"partenaire2\",\r\n        \"partenaire3\"\r\n    ],\r\n    \"start\":\"2022-03-08T12:00:00\",\r\n    \"end\":\"2022-04-28T12:00:00\",\r\n    \"limit\":\"100\",\r\n    \"offset\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by offset limit 30 100",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"partenaires\":[\r\n        \"partenaire1\",\r\n        \"partenaire2\",\r\n        \"partenaire3\"\r\n    ],\r\n    \"start\":\"2022-03-08T12:00:00\",\r\n    \"end\":\"2022-04-28T12:00:00\",\r\n    \"limit\":\"100\",\r\n    \"offset\":\"30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cache",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/version1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
