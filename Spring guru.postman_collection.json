@@ -165,7 +165,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "500000",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -406,12 +406,12 @@
 					"response": []
 				},
 				{
-					"name": "Get cache",
+					"name": "Get count cache",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/version1/products",
+							"raw": "http://localhost:8080/api/version1/cache/count",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -420,7 +420,30 @@
 							"path": [
 								"api",
 								"version1",
-								"products"
+								"cache",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get base cache",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/version1/cache/base",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"version1",
+								"cache",
+								"base"
 							]
 						}
 					},

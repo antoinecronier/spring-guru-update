@@ -63,10 +63,10 @@ public class ProductController {
     }
 
     @PostMapping("bulkproducts")
-    public ResponseEntity<String> bulkProducts(){
+    public ResponseEntity<String> bulkProducts(@RequestBody Integer nb){
         List<Product> products = new ArrayList<>();
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < nb; i++) {
             Product p = new Product();
             p.setPrice(i*3/2);
             p.setPName("p"+i);
@@ -98,12 +98,25 @@ public class ProductController {
     @Qualifier(CacheConfiguration.COUNT_CACHE_MANAGER)
     private CacheManager countCache;
 
-    @GetMapping("cache")
-    public ResponseEntity<ConcurrentHashMap<SimpleKey, Long>> getProductById(){
+    @GetMapping("cache/count")
+    public ResponseEntity<ConcurrentHashMap<SimpleKey, Long>> getCacheCount(){
 
         Cache cache = countCache.getCache(CacheConfiguration.COUNT_CACHE);
         ConcurrentHashMap<SimpleKey, Long> data = (ConcurrentHashMap<SimpleKey, Long>) cache.getNativeCache();
 
         return new ResponseEntity<ConcurrentHashMap<SimpleKey, Long>>(data, HttpStatus.OK);
+    }
+
+    @Autowired
+    @Qualifier(CacheConfiguration.BASE_CACHE_MANAGER)
+    private CacheManager baseCache;
+
+    @GetMapping("cache/base")
+    public ResponseEntity<ConcurrentHashMap<SimpleKey, MyPageableResponse>> getPCacheBase(){
+
+        Cache cache = baseCache.getCache(CacheConfiguration.BASE_CACHE);
+        ConcurrentHashMap<SimpleKey, MyPageableResponse> data = (ConcurrentHashMap<SimpleKey, MyPageableResponse>) cache.getNativeCache();
+
+        return new ResponseEntity<ConcurrentHashMap<SimpleKey, MyPageableResponse>>(data, HttpStatus.OK);
     }
 }
