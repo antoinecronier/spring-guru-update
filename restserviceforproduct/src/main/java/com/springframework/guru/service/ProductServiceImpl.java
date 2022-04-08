@@ -1,18 +1,18 @@
 package com.springframework.guru.service;
 
-
+import com.springframework.guru.configuration.CacheConfiguration;
+import com.springframework.guru.model.MyPageableResponse;
+import com.springframework.guru.model.Product;
+import com.springframework.guru.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
-import com.springframework.guru.model.Product;
-import com.springframework.guru.repository.ProductRepository;
+import java.util.Date;
 import java.util.List;
 
-@CacheConfig(cacheNames = "product")
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -35,16 +35,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-    @Caching(evict = {@CacheEvict(value = "allproductcache", allEntries = true),
-            @CacheEvict(value = "productcache", key = "#product.id")
-    })
+    @Caching(
+            evict = {
+                @CacheEvict(value = CacheConfiguration.BASE_CACHE, key = "#product.id", cacheManager = CacheConfiguration.BASE_CACHE_MANAGER)
+            }
+    )
     @Override
     public Product addProduct(Product product) {
 
         return productRepository.save(product);
     }
 
-    @Cacheable(value = "productcache",key ="#id" )
+    @Cacheable(value = CacheConfiguration.BASE_CACHE, key ="#id", cacheManager = CacheConfiguration.BASE_CACHE_MANAGER)
     @Override
     public Product getProduct(int id) {
 
@@ -55,7 +57,7 @@ public class ProductServiceImpl implements ProductService {
         return retrievedProduct;
     }
 
-    @Cacheable(value = "allproductcache")
+    @Cacheable(value = CacheConfiguration.BASE_CACHE, cacheManager = CacheConfiguration.BASE_CACHE_MANAGER)
     @Override
     public List<Product> getAllProducts() {
 
@@ -63,5 +65,16 @@ public class ProductServiceImpl implements ProductService {
         return (List<Product>) productRepository.findAll();
     }
 
+    @Override
+    public MyPageableResponse getAllPageableProducts(List<String> partenaires, Date start, Date end, int offset, int limit) {
+        MyPageableResponse result = new MyPageableResponse();
+        result.getProducts().addAll(productRepository.getAllWithOffsetAndLimite(offset, limit));
+        result.setCount(productRepository.countByPartenaires(partenaires, start, end));
+        return result;
+    }
 
+    @Override
+    public void addProducts(List<Product> products) {
+        productRepository.saveAll(products);
+    }
 }

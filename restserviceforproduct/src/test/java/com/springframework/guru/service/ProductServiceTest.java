@@ -35,10 +35,10 @@ public class ProductServiceTest {
     @BeforeEach
     public void setUp() {
         productList = new ArrayList<>();
-        product1 = new Product(1, "Bread", 20);
-        product2 = new Product(2, "jam", 140);
-        productList.add(product1);
-        productList.add(product2);
+//        product1 = new Product(1, "Bread", 20);
+//        product2 = new Product(2, "jam", 140);
+//        productList.add(product1);
+//        productList.add(product2);
     }
 
     @AfterEach
