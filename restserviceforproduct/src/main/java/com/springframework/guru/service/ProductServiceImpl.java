@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 
         System.out.println("Data is about to be retrieved from database ");
         Product retrievedProduct = null;
-        retrievedProduct = productRepository.findById(id).;
+        retrievedProduct = productRepository.getOne(id);
         System.out.println("Data retrieved from database");
         return retrievedProduct;
     }
